@@ -1,6 +1,6 @@
 <div class="banner-container">
   <div class="container">
-    <div class="banner banner-top banner-gradient text-center" style="background-image: linear-gradient(-225deg, rgba(50,120,168,0.9) 0%, rgba(40,45,61,0.5) 60%), url('https://i.ytimg.com/vi/zt6WdnrAvpE/maxresdefault.jpg');">
+    <div class="banner banner-top banner-gradient text-center" style="background-image: linear-gradient(-225deg, rgba(150,30,100,0.9) 0%, rgba(220,8,61,0.5) 30%), url('https://i.ytimg.com/vi/zt6WdnrAvpE/maxresdefault.jpg');">
 
         <div class="banner-gradient-shadow"></div>
           <div class="banner-content banner-font">
@@ -18,32 +18,18 @@
 
 <div class="container">
   <div class="row">
-    <%# @posts.each do |post| %>
+    <% @posts.each do |post| %>
       <div class="col-xs-12 col-sm-3">
         <div class="card">
         </div>
-          <%#= render "card", cocktail: cock %>
+          <%= render "card", post: post %>
       </div>
-    <%# end %>
+    <% end %>
   </div>
 </div>
 
 
 
-<!--
-   </div>
-  </div>
-</div>
-<div class="banner-container">
-  <div class="container">
-    <div class="banner banner-top banner-gradient text-center" style="background-image: url('/assets/banners/alumni-37430fa9e59605b6ad4cf9fbf0fbd135949db9a2c68807a279217a5150999b14.jpg');">
-      <div class="banner-gradient-shadow"></div>
-      <div class="banner-content">
-        <h1>
-          Le Wagon&#39;s Alumni
-        </h1>
-        <p>
-          <strong>690+ talented students</strong> sharing the same <strong>skills & passion</strong>.
 
         </p>
       </div>
