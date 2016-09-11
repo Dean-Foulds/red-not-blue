@@ -5,7 +5,7 @@
         <div class="banner-gradient-shadow"></div>
           <div class="banner-content banner-font">
             <h1>
-              Roses are red tories are blue
+              Roses are red, Tories are blue
             </h1>
             <p>
               <strong>Reporting current affairs</strong> left wing <strong> views &amp; opinions</strong>.
@@ -17,20 +17,17 @@
 
 
 <div class="container">
-<div class="row">
-<div class="col-sm-12">
-<div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('background.jpg');">
-  <div class="card-category">Popular</div>
-  <div class="card-description">
-    <h2>Some stuff</h2>
-    <p>Very cool stuff, useful and smart</p>
+  <div class="row">
+    <%# @posts.each do |post| %>
+      <div class="col-xs-12 col-sm-3">
+        <div class="card">
+        </div>
+          <%#= render "card", cocktail: cock %>
+      </div>
+    <%# end %>
   </div>
-  <img class="card-user avatar" src="user.jpg">
-  <a class="card-link" href="#" ></a>
 </div>
-</div>
-</div>
-</div>
+
 
 
 <!--
