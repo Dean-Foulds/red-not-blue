@@ -1,0 +1,36 @@
+.banner {
+  color: white;
+  text-align: center;
+  height: 50vh;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner h1 {
+  font-size: 50px;
+  font-weight: bold;
+  text-shadow: 0px 1px rgba(0, 0, 0, 0.9);
+  color: white;
+}
+.banner p {
+  font-size: 25px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 50px;
+  opacity: 0.9
+}
+.banner .btn {
+  margin-top: 20px;
+}
+.banner-font{
+  color: white;
+}
+
+.banner-content {
+  padding-top: 5px;
+}
+
+.banner-gradient {
+  opacity: 0.6;
+}
