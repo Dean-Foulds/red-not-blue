@@ -8,29 +8,17 @@
               Roses are red, Tories are blue
             </h1>
             <p>
-              <strong>Reporting current affairs</strong> left wing <strong> views &amp; opinions</strong>.
+              <strong>Reporting current affairs,</strong> left wing <strong> views &amp; opinions</strong>.
             </p>
           </div>
         </div>
       </div>
     </div>
 
-
 <div class="container">
   <div class="row">
-    <% @posts.each do |post| %>
-      <div class="col-xs-12 col-sm-3">
-        <div class="card">
-        </div>
-          <%= render "card", post: post %>
-      </div>
+    <% @posts.each do |p| %>
+    <%= render "card", post: p %>
     <% end %>
   </div>
 </div>
-
-
-
-
-        </p>
-      </div>
-    </div> -->

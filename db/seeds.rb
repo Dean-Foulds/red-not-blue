@@ -9,5 +9,11 @@ require 'json'
 require 'open-uri'
 
 Comment.destroy_all
-User.destroy_all
 Post.destroy_all
+User.destroy_all
+
+user = User.new(email: "deanfoulds@gmail.com", password: "password")
+post = Post.new(title: "Mr Blair rides again", post_content: "Hopefully never to return!")
+user.save
+post.save
+

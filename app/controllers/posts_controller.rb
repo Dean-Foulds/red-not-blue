@@ -1,20 +1,24 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show]
+
   def index
-    @post = Post.all
+    @posts = Post.order("created_at DESC").all
   end
+
   def show
-    @post = Post.new
   end
+
   def new
     @post = Post.new
   end
+
   def create
     @post = Post.new(post_params)
+    # @post.user = current_user
     if @post.save
       redirect_to post_path(@post)
     else
-      render :new
+      render :show
     end
   end
 
@@ -25,6 +29,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:post_content, :title, :photos [], videos: [])
+    params.require(:post).permit(:title, :post_content, photo: [], video: [])
   end
 end
