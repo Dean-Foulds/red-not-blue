@@ -11,3 +11,25 @@
     <%= render "media" %>
   </div>
 </div>
+
+
+
+<div class="container padded">
+  <% @post.comments.each do |c| %>
+    <div class="row">
+      <div class="col-xs-12 col-sm-12">
+        <p><%= c.content %></p>
+  <% end %>
+      </div>
+    </div>
+
+
+  <div class="row">
+    <div class="col-xs-12 col-sm-12">
+    <%= simple_form_for [@post, @comment] do |f| %>
+    <%= f.input :content, as: :text, label: :Comment %>
+    <%= f.submit "Add comment", class: "btn btn-danger" %>
+    <% end %>
+    </div>
+  </div>
+</div>
