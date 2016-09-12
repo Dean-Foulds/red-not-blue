@@ -4,8 +4,9 @@
     <div class="col-md-6 col-md-offset-3">
 
       <%= simple_form_for(@post) do |f| %>
-        <%= f.input :title %>
-        <%= f.input :post_content%>
+        <%= f.input :title, placeholder: "Enter a title" %>
+        <%= f.input :summary, placeholder: "Short summary of post" %>
+        <%= f.input :post_content %>
         <%= f.input :photo, as: :attachinary %>
         <%= f.input :video, as: :attachinary %>
         <%= f.submit class: "btn btn-danger"%>
