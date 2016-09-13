@@ -10,6 +10,9 @@
           <!-- <img class="card-user avatar" src="user.jpg"> -->
           <%= link_to "", post_path(post), class: "card-link"%>
       </div>
+       <% if current_user %>
+       <%= link_to "Edit", edit_post_path(:post), :class => "btn btn-default" %>
+       <% end %>
     </div>
   </div>
 </div>
