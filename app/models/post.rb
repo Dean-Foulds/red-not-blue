@@ -3,6 +3,7 @@ class Post < ApplicationRecord
   belongs_to :user
   has_attachments :photo, maximum: 5
   has_attachments :video, maximum: 1
-  # validates :title, presense: true, uniqness: true
-  # validates :summary, presense: true, uniqness: true
+  validates :title, presence: true
+  validates :summary, presence: true
+  validates :post_content, presence: true
 end

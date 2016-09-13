@@ -1,0 +1,21 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="comment-card">
+        <p><%= comment.created_at.strftime("Posted %a %m %b %Y at %I:%M%p") %></p>
+
+
+        <div class="card-category">
+
+
+        </div>
+          <div class="card-description">
+          <p><%= comment.content  %></p>
+            <!-- <p><%=  %></p> -->
+          </div>
+          <!-- <img class="card-user avatar" src="user.jpg"> -->
+          <%#= link_to "", post_path(post), class: "card-link"%>
+      </div>
+    </div>
+  </div>
+</div>

@@ -7,26 +7,25 @@
 
 <div class="container">
   <div class="row">
-    <%= render "media" %>
+    <%= render "posts/media" %>
   </div>
 </div>
 
 
+<div class="container">
+  <div class="row">
+    <% @post.comments.each do |c| %>
+    <%= render "posts/comment", comment: c %>
+    <% end %>
+  </div>
+</div>
+
 
 <div class="container padded">
-  <% @post.comments.each do |c| %>
-    <div class="row">
-      <div class="col-xs-12 col-sm-12">
-        <p><%= c.content %></p>
-  <% end %>
-      </div>
-    </div>
-
-
   <div class="row">
-    <div class="col-xs-12 col-sm-12">
+    <div class="col-xs-12 col-lg-6">
     <%= simple_form_for [@post, @comment] do |f| %>
-    <%= f.input :content, as: :text, label: :Comment %>
+    <%= f.input :content, as: :text, label: "Post reply" %>
     <%= f.submit "Add comment", class: "btn btn-danger" %>
     <% end %>
     </div>
