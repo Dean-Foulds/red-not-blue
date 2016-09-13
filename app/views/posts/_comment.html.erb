@@ -11,6 +11,11 @@
         </div>
           <div class="card-description">
           <p><%= comment.content  %></p>
+          <% if current_user %>
+       <%= link_to "Delete", post_comment_path(@post, comment), :class => "btn btn-default",
+       method: :delete,
+       data: { confirm: "Are you sure?" } %>
+       <% end %>
             <!-- <p><%=  %></p> -->
           </div>
           <!-- <img class="card-user avatar" src="user.jpg"> -->

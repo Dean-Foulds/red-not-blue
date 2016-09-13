@@ -26,7 +26,9 @@ class PostsController < ApplicationController
   end
 
   def update
+
   end
+
 
   def destroy
   end
