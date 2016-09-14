@@ -23,6 +23,7 @@ class PostsController < ApplicationController
   end
 
   def edit
+    #@comment = @post.comments.find(params[:id])
   end
 
   def update
@@ -30,6 +31,12 @@ class PostsController < ApplicationController
       redirect_to @post
     else
       render "posts/show"
+    end
+      @comment = @post.comments.find(params[:id])
+    if @comment.update(comments_params)
+      redirect_to post_path(@post)
+    else
+      render 'edit'
     end
   end
 
@@ -42,6 +49,7 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
+
   end
 
   def post_params

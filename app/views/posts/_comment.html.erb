@@ -12,6 +12,9 @@
        method: :delete,
        data: { confirm: "Are you sure?" } %>
        <% end %>
+       <% if current_user %>
+          <%= link_to "Edit", edit_post_comment_path(@post, comment), :class => "btn btn-success" %>
+        <% end %>
             <!-- <p><%=  %></p> -->
           </div>
           <!-- <img class="card-user avatar" src="user.jpg"> -->

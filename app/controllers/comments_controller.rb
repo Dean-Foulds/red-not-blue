@@ -23,9 +23,23 @@ class CommentsController < ApplicationController
   end
 
   def edit
+    @comment = Comment.find(params[:id])
+  @post = Post.find(params[:post_id])
   end
 
   def update
+    @comment = Comment.find(params[:id])
+         @post = @comment.post
+          if @comment.update_attributes(comment_params)
+            redirect_to @post
+          else
+           render :action => "edit"
+        end
+    # if @comment.update(comment_params)
+    #   redirect_to @post
+    # else
+    #   render "posts/show"
+    # end
   end
 
   def destroy
@@ -43,5 +57,4 @@ class CommentsController < ApplicationController
   def comment_params
     params.require(:comment).permit(:content)
   end
-
 end
