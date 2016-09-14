@@ -2,19 +2,24 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update]
 
   def index
-    @posts = Post.order("created_at DESC").all
+    @posts = policy_scope(Post).order("created_at DESC")
   end
 
   def show
+    @post = Post.find(params[:id])
     @comment = Comment.new
+    @comment.post = @post
+    authorize @comment
   end
 
   def new
     @post = Post.new
+    authorize @post
   end
 
   def create
     @post = Post.new(post_params)
+    authorize @post
     if @post.save
       redirect_to @post
     else
@@ -23,7 +28,7 @@ class PostsController < ApplicationController
   end
 
   def edit
-    #@comment = @post.comments.find(params[:id])
+
   end
 
   def update
@@ -49,7 +54,7 @@ class PostsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:id])
-
+    authorize @post
   end
 
   def post_params

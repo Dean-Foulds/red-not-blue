@@ -1,7 +1,9 @@
 class CommentsController < ApplicationController
+  # before_action :set_comment
   before_action :set_post
   def index
-    @comments = Comment.all
+    # @comments = Comment.all
+    @comments = policy_scope(Comment)
   end
 
   def show
@@ -15,6 +17,7 @@ class CommentsController < ApplicationController
   def create
     @comment = Comment.new(comment_params)
     @comment.post = @post
+    authorize @comment
     if @comment.save
       redirect_to post_path(@post)
     else
@@ -24,22 +27,19 @@ class CommentsController < ApplicationController
 
   def edit
     @comment = Comment.find(params[:id])
-  @post = Post.find(params[:post_id])
+    authorize @comment
   end
 
   def update
     @comment = Comment.find(params[:id])
-         @post = @comment.post
-          if @comment.update_attributes(comment_params)
-            redirect_to @post
-          else
-           render :action => "edit"
-        end
-    # if @comment.update(comment_params)
-    #   redirect_to @post
-    # else
-    #   render "posts/show"
-    # end
+    @post = @comment.post
+    authorize @comment
+    authorize @post
+    if @comment.update_attributes(comment_params)
+      redirect_to @post
+    else
+      render :action => "edit"
+    end
   end
 
   def destroy
@@ -52,6 +52,7 @@ class CommentsController < ApplicationController
 
   def set_post
     @post = Post.find(params[:post_id])
+    authorize @post
   end
 
   def comment_params

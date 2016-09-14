@@ -52,17 +52,36 @@
 .navbar-wagon-button {
   margin-left: 10px;
   padding: 0 20px;
-  // border-radius: 20em;
   line-height: 40px;
   background-color: #8D0002;
   color: white;
   font-size: 14px;
   border: 2px solid #8D0002;
 }
+
+.cta_btn {
+  margin-left: 10px;
+  padding: 0 20px;
+  line-height: 40px;
+  background-color: #32B796;
+  color: white;
+  font-size: 20px;
+  border: 2px solid #32B796;
+  border-radius: 3px;
+  opacity: 1;
+}
 .navbar-wagon-button:hover {
   color: white;
   background: #8D0002;
-  border-color: #ac2626;
+  border-color: #8D0002;
+  opacity: 0.6;
+}
+
+.cta_btn:hover {
+  color: white;
+  background: #32B796;
+  border-color: #32B796;
+  opacity: 0.7;
 }
 
 /* Navbar search form */
