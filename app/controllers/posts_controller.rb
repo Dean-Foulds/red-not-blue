@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show]
+  before_action :set_post, only: [:show, :edit, :update]
 
   def index
     @posts = Post.order("created_at DESC").all
@@ -16,9 +16,9 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     if @post.save
-      redirect_to post_path(@post)
+      redirect_to @post
     else
-      render :show
+      render "posts/show"
     end
   end
 
@@ -26,11 +26,10 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
     if @post.update(post_params)
       redirect_to @post
     else
-      render :show
+      render "posts/show"
     end
   end
 
