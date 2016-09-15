@@ -9,10 +9,10 @@ class ProfilesController < ApplicationController
 
   def update
     authorize current_user
-    if current_user.update(user_params)
-      redirect_to edit_profile_path
+    if current_user.update(profile_params)
+      redirect_to profile_path
     else
-      render :edit
+      render :show
     end
   end
 

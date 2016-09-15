@@ -1,17 +1,23 @@
 <!-- profile edit -->
-    <%= simple_form_for(current_user, url: update_profile_path) do |f| %>
-    <%= f.error_notification %>
-    <%= f.input :first_name, placeholder: "First name" %>
-    <%= f.input :last_name, placeholder: "Last name" %>
-    <%= f.input :email, placeholder: "bob@bob.com" %>
-    <%= f.input :avatar, as: :attachinary %>
-    <%= f.error :base %>
-    <div style="text-align: right;">
-    <%= f.submit "Save", class: "btn btn-default btn-sm" %>
-    </div>
-  <% end %>
 
-<script>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-4 col-xs-offset-3">
+      <%= simple_form_for(current_user, url: update_profile_path) do |f| %>
+      <%= f.error_notification %>
+      <%= f.input :first_name, placeholder: "First name" %>
+      <%= f.input :last_name, placeholder: "Last name" %>
+      <%= f.input :email, placeholder: "bob@bob.com" %>
+      <%#= f.input :avatar, as: :attachinary %>
+      <%= f.error :base %>
+      <div style="text-align: right;">
+      <%= f.submit "Save", class: "btn btn-default btn-sm" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<!-- <script>
   function submitForm() {
      // Get the first form with the name
      // Hopefully there is only one, but there are more, select the correct index
@@ -21,3 +27,4 @@
      return false; // Prevent page refresh
   }
 </script>
+ -->
