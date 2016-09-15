@@ -28,7 +28,7 @@ class PostPolicy < ApplicationPolicy
   end
 
   def create?
-    user.admin
+    admin_user?
   end
 
   private
