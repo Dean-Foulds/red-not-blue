@@ -1,6 +1,8 @@
 class CommentsController < ApplicationController
   # before_action :set_comment
   before_action :set_post
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
+
   def index
     # @comments = Comment.all
     @comments = policy_scope(Comment)
@@ -45,10 +47,16 @@ class CommentsController < ApplicationController
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
+    authorize @comment
     redirect_to post_path(@post)
   end
 
   private
+
+  def user_not_authorized
+    flash[:alert] = "You are not authorised to complete this action"
+    redirect_to(request.referrer || root_path)
+  end
 
   def set_post
     @post = Post.find(params[:post_id])

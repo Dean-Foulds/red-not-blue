@@ -11,11 +11,15 @@ class CommentPolicy < ApplicationPolicy
 
 
   def create?
-    return true
+    user_is_owner_or_admin?
   end
 
   def update?
-  user_is_owner_or_admin?
+    user.admin
+  end
+
+  def destroy
+    user.admin
   end
 
   private

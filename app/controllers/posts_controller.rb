@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update]
+  rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   def index
     @posts = policy_scope(Post).order("created_at DESC")
@@ -38,6 +39,7 @@ class PostsController < ApplicationController
       render "posts/show"
     end
       @comment = @post.comments.find(params[:id])
+      authorize @comment
     if @comment.update(comments_params)
       redirect_to post_path(@post)
     else
@@ -51,6 +53,11 @@ class PostsController < ApplicationController
 
 
   private
+
+  def user_not_authorized
+    flash[:alert] = "You are not authorised to complete this action"
+    redirect_to(request.referrer || root_path)
+  end
 
   def set_post
     @post = Post.find(params[:id])

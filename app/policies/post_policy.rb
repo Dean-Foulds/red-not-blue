@@ -8,21 +8,34 @@ class PostPolicy < ApplicationPolicy
     true
   end
 
+  def edit?
+    admin_user?
+  end
+
   def update?
-    user_is_owner_or_admin?
+    if @comment
+      user_is_owner_or_admin?
+    end
+    # if @comment
+    # user_is_owner_or_admin?
+    # end
     #this needs to be changed to an if else to differentiate between an update on comment or post
     #a user can edit a comment but not a post
   end
 
   def new?
-    user.admin
+    admin_user?
   end
 
   def create?
-    user_is_owner_or_admin?
+    user.admin
   end
 
   private
+
+  def admin_user?
+    user.admin
+  end
 
   def user_is_owner_or_admin?
     user == user || user.admin
