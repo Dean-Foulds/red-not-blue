@@ -33,17 +33,11 @@ class PostsController < ApplicationController
   end
 
   def update
+    authorize @post
     if @post.update(post_params)
       redirect_to @post
     else
       render "posts/show"
-    end
-      @comment = @post.comments.find(params[:id])
-      authorize @comment
-    if @comment.update(comments_params)
-      redirect_to post_path(@post)
-    else
-      render 'edit'
     end
   end
 
