@@ -6,9 +6,9 @@
   <div class="row">
     <div class="col-md-12 col-sm-offset-4">
     <h1>Profile Page</h1>
-    <%# if current_user.avatar? %>
-      <%#= cl_image_tag current_user.avatar.path, class: "property_image" %>
-    <%# end %>
+    <% if current_user.avatar? %>
+      <%= cl_image_tag current_user.avatar.path, class: "avatar-square" %>
+    <% end %>
       <h4>First Name: <%= current_user.first_name %></h4>
       <h4>Last name: <%= current_user.last_name %></h4>
       <p>Email address: <%= current_user.email %></p>
