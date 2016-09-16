@@ -11,6 +11,9 @@
           <%= link_to "", post_path(post), class: "card-link"%>
           <% end %>
       </div>
+      <% if current_user.admin? %>
+        <%= link_to t(".top_call_to_action", default: "New Post"), new_post_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+      <% end %>
        <% if policy(Post).edit? %>
        <%= link_to "Edit", edit_post_path(post), :class => "btn btn-default" %>
        <% end %>

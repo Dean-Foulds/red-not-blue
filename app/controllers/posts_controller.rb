@@ -20,8 +20,8 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    authorize @post
+      @post = Post.new(post_params)
+      authorize @post
     if @post.save
       redirect_to @post
     else
