@@ -15,6 +15,7 @@
 <div class="container">
   <div class="row">
     <% @post.comments.each do |c| %>
+    <%= render "posts/comment", comment: c %>
     <% end %>
   </div>
 </div>
