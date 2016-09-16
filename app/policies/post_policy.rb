@@ -29,8 +29,8 @@ class PostPolicy < ApplicationPolicy
     user.admin? if user
   end
 
-  def destroy
-    user.admin if user
+  def destroy?
+    record.user == user || user.admin
   end
 
   private
