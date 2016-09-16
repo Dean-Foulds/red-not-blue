@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update]
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
+
   def index
     @posts = policy_scope(Post).order("created_at DESC")
   end
@@ -10,7 +11,7 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
     @comment = Comment.new
     @comment.post = @post
-    authorize @comment
+    authorize Comment
   end
 
   def new
@@ -47,6 +48,7 @@ class PostsController < ApplicationController
 
 
   private
+
 
   def user_not_authorized
     flash[:alert] = "You are not authorised to complete this action"

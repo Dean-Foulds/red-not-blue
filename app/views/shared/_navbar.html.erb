@@ -49,8 +49,9 @@
 
     <% end %>
 
-    <!-- Button (call-to-action) -->
+    <% if policy(Post).new? %>
     <%= link_to t(".top_call_to_action", default: "New Post"), new_post_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+    <% end %>
   </div>
 
   <!-- Dropdown list appearing on mobile only -->

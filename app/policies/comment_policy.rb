@@ -6,25 +6,25 @@ class CommentPolicy < ApplicationPolicy
   end
 
   def show?
-  return true
+    return true
   end
 
 
   def create?
-    user_is_owner_or_admin?
+    return true
   end
 
   def update?
-    user.admin
+    user_is_owner_or_admin?
   end
 
   def destroy
-    user.admin
+    user.admin? if user
   end
 
   private
 
   def user_is_owner_or_admin?
-    user == user || user.admin
+    user == user || user.admin?
   end
 end
