@@ -26,7 +26,7 @@ class PostPolicy < ApplicationPolicy
 
 
   def create?
-    user.admin? if user
+    user_is_owner_or_admin?
   end
 
   def destroy?
