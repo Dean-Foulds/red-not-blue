@@ -4,6 +4,8 @@
       <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('post.photo_url');">
         <div class="card-category"><%= post.created_at.strftime("Posted %a %m %b %Y at %I:%M%p")  %></div>
           <div class="card-description">
+            <h2><%= post.title %></h2>
+            <p><%= post.summary %></p>
           </div>
           <% if policy(Post).show? %>
           <%= link_to "", post_path(post), class: "card-link"%>
