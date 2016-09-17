@@ -12,6 +12,7 @@ class PostsController < ApplicationController
     @comment = Comment.new
     @comment.post = @post
     authorize Comment
+    authorize Post
   end
 
   def new
@@ -25,7 +26,7 @@ class PostsController < ApplicationController
     if @post.save
       redirect_to @post
     else
-      render :new
+      render :edit
     end
   end
 
@@ -61,6 +62,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:title, :post_content, :summary, photo: [], video: [])
+    params.require(:post).permit(:title, :post_content, :summary, photos: [], video: [])
   end
 end

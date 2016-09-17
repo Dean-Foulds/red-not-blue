@@ -4,6 +4,6 @@ class Post < ApplicationRecord
   validates :title, presence: true
   validates :summary, presence: true
   validates :post_content, presence: true
-  has_attachments :photo, maximum: 5
+  has_attachments :photos, maximum: 5
   has_attachments :video, maximum: 1
 end

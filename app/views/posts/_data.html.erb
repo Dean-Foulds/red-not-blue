@@ -1,27 +1,21 @@
- <% if @post.photos.first
-  main_post_picture = cl_image_path @post.photos.first.path
-else
-  main_post_picture = ""
-  end %>
 
-
-<%# if @post.video.first
-    main_post_video = cl_video_tag current_user.video.path @post.video.first.path
-  else
-    main_post_video = ""
-  end %>
-
+<% if @post.photos.first %>
+  <% main_post_photo = cl_image_path @post.photos.first.path %>
+<% else %>
+  <% main_post_photo = "??" %>
+<% end %>
 
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <div class="col-xs-4">
-       <div class="" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.0) 100%, rgba(0,36,61,0.0) 100%), url('<%= main_post_photo %>') ;">
+    <div class="card-img" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.0) 100%, rgba(0,36,61,0.0) 100%), url('<%= main_post_photo %>') ;">
        </div>
+
+      <div class="padded col-xs-4">
+<p><%= @post.post_content %></p>
       </div>
     </div>
   </div>
-  <p><%= @post.post_content %></p>
 </div>
 
 

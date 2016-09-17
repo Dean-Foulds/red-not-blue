@@ -8,6 +8,16 @@
   position: relative;
 }
 
+.card-img {
+  height: 200px;
+  width: 700px;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  margin-top: 20px;
+  border-radius: 5px;
+  color: #8D0002;
+  position: relative;
+}
+
 .card-user {
   position: absolute;
   right: 10px;
