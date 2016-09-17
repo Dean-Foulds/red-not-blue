@@ -8,6 +8,8 @@
         <%= f.input :title, placeholder: "Enter a title" %>
         <%= f.input :summary, placeholder: "Short summary of post" %>
         <%= f.input :post_content, as: :text %>
+        <%= f.input :photo, as: :attachinary %>
+        <%= f.input :video, as: :attachinary %>
         <%= f.submit class: "btn btn-danger"%>
       <% end %>
     </div>
