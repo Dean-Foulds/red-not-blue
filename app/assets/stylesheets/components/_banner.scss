@@ -1,5 +1,15 @@
 .banner {
-  color: white;
+  color: #F7FBFC;
+  text-align: center;
+  height: 40vh;
+  border-radius: 5px;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner-post {
+  color: #F7FBFC;
   text-align: center;
   height: 40vh;
   background-size: cover !important;
@@ -11,12 +21,12 @@
   font-size: 60px;
   font-weight: bold;
   text-shadow: 0px 1px rgba(0, 0, 0, 0.9);
-  color: white;
+  color: #F7FBFC;
 }
 .banner p {
   font-size: 25px;
   font-weight: bold;
-  color: white;
+  color: #F7FBFC;
   margin-bottom: 50px;
   opacity: 0.9
 }
@@ -24,7 +34,7 @@
   margin-top: 20px;
 }
 .banner-font{
-  color: white;
+  color: #F7FBFC;
 }
 
 .banner-content {
