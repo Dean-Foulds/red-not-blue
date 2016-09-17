@@ -7,18 +7,9 @@ class UserPolicy < ApplicationPolicy
     end
   end
 
-
-  # def index?
-  #   true
-  # end
-
   def show?
     true
   end
-
-  # def create?
-  #   return true
-  # end
 
   def update?
     user_is_owner_or_admin?
