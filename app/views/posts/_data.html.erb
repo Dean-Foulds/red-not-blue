@@ -1,9 +1,7 @@
-
-
-<% if @post.photo.first
-    main_post_photo = cl_image_path @post.photo.first.path
-  else
-    main_post_photo = ""
+ <% if @post.photos.first
+  main_post_picture = cl_image_path @post.photos.first.path
+else
+  main_post_picture = ""
   end %>
 
 

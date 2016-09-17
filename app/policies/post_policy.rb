@@ -14,12 +14,12 @@ class PostPolicy < ApplicationPolicy
 
   end
 
-  def update?
-    user.admin? if user
-  end
-
   def create?
     user == user
+  end
+
+  def update?
+    user.admin? if user
   end
 
   def destroy?
