@@ -5,6 +5,7 @@
     <div class="col-xs-4 col-xs-offset-3">
       <%= simple_form_for(current_user, url: update_profile_path) do |f| %>
       <%= f.error_notification %>
+      <%= f.input :username, placeholder: "Username" %>
       <%= f.input :first_name, placeholder: "First name" %>
       <%= f.input :last_name, placeholder: "Last name" %>
       <%= f.input :email, placeholder: "bob@bob.com" %>
