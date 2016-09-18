@@ -1,10 +1,8 @@
 class CommentsController < ApplicationController
-  # before_action :set_comment
   before_action :set_post
   rescue_from Pundit::NotAuthorizedError, with: :user_not_authorized
 
   def index
-    # @comments = Comment.all
     @comments = policy_scope(Comment)
   end
 
@@ -64,6 +62,6 @@ class CommentsController < ApplicationController
   end
 
   def comment_params
-    params.require(:comment).permit(:content)
+    params.require(:comment).permit(:content, :user_id)
   end
 end

@@ -8,7 +8,7 @@
         <%= f.input :summary, placeholder: "Short summary of post" %>
         <%= f.input :post_content %>
         <%= f.input :photos, as: :attachinary %>
-        <%= f.input :video, as: :attachinary %>
+        <%= f.attachinary_file_field :video %>
         <%= f.submit class: "btn btn-danger"%>
       <% end %>
     </div>
