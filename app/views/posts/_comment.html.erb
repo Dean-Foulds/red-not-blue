@@ -2,20 +2,21 @@
   <div class="row">
     <div class="col-sm-12">
       <div class="comment-card">
-        <div class="card-category">
+        <div class="card-category list-inline">
+          <% if current_user.admin? %>
+          <%= link_to "Delete", post_comment_path(@post, comment), :class => "btn btn-default",
+            method: :delete,
+            data: { confirm: "Are you sure?" } %>
+          <% end %>
+          <% if current_user.admin? %>
+          <%= link_to "Edit", edit_post_comment_path(@post, comment), :class => "btn btn-success" %>
+          <% end %>
           <p><%= comment.created_at.strftime("Posted %a %m %b %Y at %I:%M%p") %></p>
         </div>
           <div class="card-description">
           <p><%= comment.content  %></p>
           <% #if policy(Comment).destroy? %>
-          <% if current_user.admin? %>
-       <%= link_to "Delete", post_comment_path(@post, comment), :class => "btn btn-default",
-       method: :delete,
-       data: { confirm: "Are you sure?" } %>
-       <% end %>
-       <% if current_user.admin? %>
-          <%= link_to "Edit", edit_post_comment_path(@post, comment), :class => "btn btn-success" %>
-        <% end %>
+
             <!-- <p><%=  %></p> -->
           </div>
           <!-- <img class="card-user avatar" src="user.jpg"> -->
