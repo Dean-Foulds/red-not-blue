@@ -1,3 +1,13 @@
+.banner-post {
+  color: #8D0002;
+  text-align: center;
+  height: 40vh;
+  background-size: cover !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .banner {
   color: #F7FBFC;
   text-align: center;
@@ -8,15 +18,7 @@
   align-items: center;
   justify-content: center;
 }
-.banner-post {
-  color: #8D0002;
-  text-align: center;
-  height: 40vh;
-  background-size: cover !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+
 .banner h1 {
   font-size: 60px;
   font-weight: bold;
