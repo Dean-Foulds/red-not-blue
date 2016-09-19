@@ -12,7 +12,7 @@ class ProfilesController < ApplicationController
     if current_user.update(profile_params)
       redirect_to profile_path
     else
-      render :show
+      render :edit
     end
   end
 
