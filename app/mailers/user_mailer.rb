@@ -7,7 +7,7 @@ class UserMailer < ApplicationMailer
   #
   def welcome(user)
   @user = user
-
-  mail(to: @user.email, subject: 'Welcome to Red not Blue!')
-  end
+  mail to: user.email
 end
+end
+
