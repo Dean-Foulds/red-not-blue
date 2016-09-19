@@ -1,6 +1,6 @@
 
 <% if @post.photos.first %>
-  <% main_post_photo = cl_image_path @post.photos.first.path %>
+  <% main_post_photo = cl_image_tag @post.photos.first.path %>
 <% else %>
   <% main_post_photo = "" %>
 <% end %>
@@ -17,8 +17,9 @@
   <div class="row">
     <div class="col-xs-12">
       <%= main_post_video %>
-      <div class="card-img" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.0) 100%, rgba(0,36,61,0.0) 100%), url('<%= main_post_photo %>') ;">
-      </div>
+      <%= main_post_photo %>
+      <!-- <div class="img-responsive" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.0) 100%, rgba(0,36,61,0.0) 100%), url('<%= main_post_photo %>') ;">
+      </div> -->
 
 
 
