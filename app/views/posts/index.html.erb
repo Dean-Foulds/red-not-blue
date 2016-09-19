@@ -4,9 +4,9 @@
 
         <div class="banner-gradient-shadow"></div>
           <div class="banner-content banner-font">
-          <% if current_user.admin? %>
-                <%= link_to t(".top_call_to_action", default: "New Post"), new_post_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
-              <% end %>
+           <% if current_user.admin? %>
+        <%= link_to t(".top_call_to_action", default: "New Post"), new_post_path, class: "navbar-wagon-item navbar-wagon-button btn" %>
+      <% end %>
             <h1>
               Roses are red, Tories are blue
             </h1>
