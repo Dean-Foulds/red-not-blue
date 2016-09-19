@@ -9,6 +9,7 @@ gem 'jbuilder', '~> 2.0'
 gem 'devise', github: 'plataformatec/devise'
 gem "pundit"
 gem 'redis'
+gem "letter_opener", group: :development
 
 gem 'sass-rails'
 gem 'jquery-rails'
@@ -32,6 +33,7 @@ group :development, :test do
   gem 'spring'
   gem 'listen', '~> 3.0.5'
   gem 'spring-watcher-listen', '~> 2.0.0'
+
 end
 
 

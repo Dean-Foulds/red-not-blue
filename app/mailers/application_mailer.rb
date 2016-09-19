@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: 'from@example.com'
-  layout 'mailer'
+  default from: "Your Mailer <rednotblue@posteo.net>"
+  default to: "Red not Blue <rednotblue@posteo.net>"
 end

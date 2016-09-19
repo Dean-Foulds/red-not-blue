@@ -6,4 +6,11 @@ class User < ApplicationRecord
    has_many :posts
    has_many :comments
    has_attachment :avatar
+   after_create :send_welcome_email
+
+  private
+
+  def send_welcome_email
+    UserMailer.welcome(self).deliver_now
+  end
 end
