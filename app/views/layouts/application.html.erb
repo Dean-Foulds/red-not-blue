@@ -1,20 +1,51 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Roses are red, Tories are blue</title>
-    <%= csrf_meta_tags %>
-    <%= action_cable_meta_tag %>
-      <link rel="icon" href="<%= image_path "logo.png" %>" type="image/png" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <%= stylesheet_link_tag    'application', media: 'all' %>
+  <link rel="icon" href="<%= image_path "logo.png" %>" type="image/png" />
+  <meta name="description" content="Homebug is the only tool in the UK to assist the less fortunate be placed in safe and reasonable accomodation, working in conjunction with sympathetic charities and the government.">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Red not Blue</title>
+  <%= csrf_meta_tags %>
+  <%= action_cable_meta_tag %>
+  <%= stylesheet_link_tag 'application', media: 'all' %>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/cosmo/bootstrap.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta property="og:title" content="Red not Blue" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://www.rednotblue.co.uk" />
+  <meta property="og:image" content="" />
+  <meta property="og:description" content="Red not Blue is a blog focussing on left wing politics and current affairs" />
+  <meta property="og:site_name" content="Red not Blue" />
+
+
+  <meta name="twitter:card" content="">
+  <meta name="twitter:site" content="">
+  <meta name="twitter:title" content="Red not Blue">
+  <meta name="twitter:description" content="Red not Blue is a blog focussing on left wing politics and current affairs">
+  <meta name="twitter:creator" content="">
+  <meta name="twitter:image:src" content="">
+
   </head>
   <body>
     <%= render 'shared/navbar' %>
     <%= render 'shared/flashes' %>
-    <%= yield %>
-    <%= javascript_include_tag 'application' %>
+
+      <%= yield %>
+
+    <% if current_page?(root_path) %>
+      <%= render 'shared/footer' %>
+    <% end %>
+
+    <%= javascript_include_tag "https://maps.google.com/maps/api/js?libraries=places&key=#{ENV['GOOGLE_API_BROWSER_KEY']}" %>
+    <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/markerclusterer/src/markerclusterer_compiled.js" %>
+    <%= javascript_include_tag "https://cdn.rawgit.com/printercu/google-maps-utility-library-v3-read-only/master/infobox/src/infobox_packed.js" %>
+
+    <%= javascript_include_tag "application" %>
     <%= cloudinary_js_config %>
-    <%#= render 'shared/footer' %>
+
+    <%= yield(:after_js) %>
   </body>
 </html>
