@@ -10,6 +10,7 @@ gem 'devise', github: 'plataformatec/devise'
 gem "pundit"
 gem 'redis'
 gem "letter_opener", group: :development
+gem 'social-share-button'
 
 gem 'sass-rails'
 gem 'jquery-rails'

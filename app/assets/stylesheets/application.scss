@@ -1,3 +1,4 @@
+@import "social-share-button";
 // Graphical variables
 @import "config/variables";
 @import "config/bootstrap_variables";
@@ -13,3 +14,40 @@
 @import "components/index";
 @import "pages/index";
 @import "vendor/index";
+
+$size: 0px;
+
+.social-share-button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.ssb-icon {
+  background-image: none;
+  flex: 0 0 24%;
+  color: white;
+  font-size: 28px;
+  padding: 10px 0;
+  text-align: center;
+  border-radius: 2px;
+  cursor: pointer;
+  &:hover {
+    color: white;
+    opacity: 0.8;
+  }
+}
+.ssb-linkedin {
+  background: #4a4a4a;
+  height: 50px;
+  text-decoration: none;
+  background-image: "";
+}
+.ssb-email{
+  background: #aeaeae;
+}
+.ssb-twitter{
+  background: #00a3e1;
+}
+.ssb-facebook{
+  background: #3b5998;
+}
