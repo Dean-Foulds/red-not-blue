@@ -15,7 +15,7 @@
 @import "pages/index";
 @import "vendor/index";
 
-$size: 0px;
+$size: 50px;
 
 .social-share-button {
   display: flex;
@@ -26,7 +26,9 @@ $size: 0px;
   background-image: none;
   flex: 0 0 24%;
   color: white;
-  font-size: 28px;
+  background-size: $size $size;
+  height: $size;
+  width: $size;
   padding: 10px 0;
   text-align: center;
   border-radius: 2px;
