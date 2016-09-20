@@ -15,7 +15,7 @@ class PostPolicy < ApplicationPolicy
   end
 
   def create?
-    user == user
+    user_is_owner_or_admin?
   end
 
   def update?
