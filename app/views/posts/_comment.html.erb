@@ -4,7 +4,7 @@
       <div class="comment-card">
         <div class="card-category list-inline">
           <% if policy(Post).edit? %>
-          <%= link_to "Delete", post_comment_path(@post, comment), :class => "btn btn-default",
+          <%= link_to "Delete", post_comment_path(@post, comment), :class => "btn btn-danger",
             method: :delete,
             data: { confirm: "Are you sure?" } %>
           <% end %>
