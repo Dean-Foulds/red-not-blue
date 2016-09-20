@@ -13,10 +13,6 @@ class ApplicationController < ActionController::Base
   #   flash[:alert] = "You are not authorized to perform this action."
   #   redirect_to(root_path)
   # end
-  def default_headers
-    headers['X-Frame-Options'] = 'ALLOWALL'
-  end
-
 
   private
 
