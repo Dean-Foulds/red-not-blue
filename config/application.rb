@@ -17,9 +17,9 @@ require "attachinary/orm/active_record"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-config.action_dispatch.default_headers = {
-    'X-Frame-Options' => 'ALLOWALL'
-}
+# config.action_dispatch.default_headers = {
+#     'X-Frame-Options' => 'ALLOWALL'
+# }
 
 module RedBlogApp
   class Application < Rails::Application
