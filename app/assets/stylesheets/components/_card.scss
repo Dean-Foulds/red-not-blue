@@ -1,5 +1,5 @@
 .card {
-  height: auto;
+  height: 150px;
   background-size: cover !important;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   margin-top: 20px;
@@ -10,7 +10,7 @@
 
 .card-img {
   width: 700px;
-  height: 400px;
+  height: auto;
   text-shadow: 0 1px 3px rgba(0,0,0,0.6);
   margin-top: 20px;
   border-radius: 5px;
