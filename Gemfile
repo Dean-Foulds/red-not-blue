@@ -13,6 +13,12 @@ gem "letter_opener", group: :development
 gem 'social-share-button'
 gem 'activeadmin', github: 'activeadmin/activeadmin'
 gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+gem 'js-routes', '~> 1.3'
+gem 'react-rails', '~> 1.8'
+
+source 'https://rails-assets.org' do
+  gem 'rails-assets-classnames'
+end
 
 
 gem 'sass-rails'
