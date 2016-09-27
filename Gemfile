@@ -11,6 +11,9 @@ gem "pundit"
 gem 'redis'
 gem "letter_opener", group: :development
 gem 'social-share-button'
+gem 'activeadmin', github: 'activeadmin/activeadmin'
+gem 'inherited_resources', github: 'activeadmin/inherited_resources'
+
 
 gem 'sass-rails'
 gem 'jquery-rails'
