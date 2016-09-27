@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  ActiveAdmin.routes(self)
   resources :posts, only: [:index, :show, :new, :create, :edit, :update] do
     resources :comments, only: [:show, :edit, :update, :create, :destroy]
   end
