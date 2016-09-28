@@ -7,6 +7,7 @@ class User < ApplicationRecord
    has_many :comments
    has_attachment :avatar
    after_create :send_welcome_email
+   acts_as_voter
 
   private
 
