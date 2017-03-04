@@ -1,5 +1,5 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "Red Not Blue <rednotblue@posteo.net>"
-  default to: "Red not Blue <rednotblue@posteo.net>"
+  default from: "Test <twilight.angel@live.co.uk>"
+  default to: "Test <twilight.angel@live.co.uk>"
   layout 'mailer'
 end
